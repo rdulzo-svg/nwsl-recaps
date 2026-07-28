@@ -5,7 +5,7 @@ disableKinds = ['taxonomy', 'term']
 
 [params]
   description = "Match recaps and highlights for the National Women's Soccer League."
-  about = "NWSL Recaps publishes a written recap and highlight video for every NWSL match, usually within a day of the final whistle."
+  about = "NWSL Recaps publishes a written recap and highlight video for every NWSL match."
 
 [[menu.main]]
   name = "Home"
