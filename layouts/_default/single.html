@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="recap">
+  <h1>{{ .Title }}</h1>
+  <p class="recap-meta">
+    {{ .Date.Format "January 2, 2006" }}
+    {{ with .Params.venue }} · {{ . }}{{ end }}
+  </p>
+
+  {{ with .Params.video_id }}
+  <div class="video-embed">
+    <iframe
+      src="https://www.youtube.com/embed/{{ . }}"
+      title="Match highlights"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+  {{ end }}
+
+  <div class="recap-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,22 @@
+baseURL = 'https://rdulzo-svg.github.io/nwsl-recaps/'
+locale = 'en-us'
+title = 'NWSL Recaps'
+theme = ''
+
+[params]
+  description = "AI-assisted match recaps and highlights for the National Women's Soccer League."
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Recaps"
+  url = "/recaps/"
+  weight = 2
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
