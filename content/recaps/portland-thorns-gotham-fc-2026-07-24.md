@@ -4,7 +4,10 @@ date: 2026-07-24
 venue: "Providence Park"
 attendance: "21,743"
 video_id: "sgpWGV9GU3s"
-teams: ["Portland Thorns FC", "Gotham FC"]
+home_team: "Portland Thorns FC"
+away_team: "Gotham FC"
+home_score: 2
+away_score: 2
 draft: false
 ---
 

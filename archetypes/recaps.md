@@ -4,7 +4,10 @@ date: {{ .Date }}
 venue: ""
 attendance: ""
 video_id: ""
-teams: []
+home_team: ""
+away_team: ""
+home_score:
+away_score:
 draft: true
 ---
 

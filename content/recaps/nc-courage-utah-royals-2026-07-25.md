@@ -3,7 +3,10 @@ title: "Utah Royals Score Club-Record Four Goals in Rout of North Carolina Coura
 date: 2026-07-25
 venue: "Cary, North Carolina"
 video_id: "DA8grlCzmXw"
-teams: ["North Carolina Courage", "Utah Royals FC"]
+home_team: "North Carolina Courage"
+away_team: "Utah Royals FC"
+home_score: 1
+away_score: 4
 draft: false
 ---
 

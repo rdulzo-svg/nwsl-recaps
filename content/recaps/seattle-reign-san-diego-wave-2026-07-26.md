@@ -3,7 +3,10 @@ title: "McCammon's Historic Two-Assist Night Powers Seattle Reign Past San Diego
 date: 2026-07-26
 venue: "Snapdragon Stadium"
 video_id: "YlIxXQiDGko"
-teams: ["San Diego Wave FC", "Seattle Reign FC"]
+home_team: "San Diego Wave FC"
+away_team: "Seattle Reign FC"
+home_score: 0
+away_score: 2
 draft: false
 ---
 

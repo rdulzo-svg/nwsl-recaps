@@ -3,7 +3,10 @@ title: "Lardner's First Career Brace Leads Racing Louisville Past Angel City FC"
 date: 2026-07-26
 venue: "BMO Stadium"
 video_id: "PhLAAMXS-jk"
-teams: ["Angel City FC", "Racing Louisville FC"]
+home_team: "Angel City FC"
+away_team: "Racing Louisville FC"
+home_score: 1
+away_score: 2
 draft: false
 ---
 

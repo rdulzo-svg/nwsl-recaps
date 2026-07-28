@@ -3,7 +3,10 @@ title: "Julie Doyle's Late Winner Gives Orlando Pride 1-0 Win Over Chicago Stars
 date: 2026-07-24
 venue: "Inter&Co Stadium"
 video_id: "joMxNSqqbYc"
-teams: ["Orlando Pride", "Chicago Stars FC"]
+home_team: "Orlando Pride"
+away_team: "Chicago Stars FC"
+home_score: 1
+away_score: 0
 draft: false
 ---
 

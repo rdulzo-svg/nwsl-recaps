@@ -1,16 +1,48 @@
 {{ define "main" }}
-<section class="hero">
-  <h1>NWSL Recaps</h1>
-  <p>{{ .Site.Params.description }}</p>
-</section>
+{{ $teamsData := hugo.Data.teams }}
+{{ $recaps := (where .Site.RegularPages "Section" "recaps").ByDate.Reverse }}
+{{ $featured := index $recaps 0 }}
+{{ $rest := after 1 $recaps }}
 
-<h2>Latest Recaps</h2>
+{{ with $featured }}
+{{ $home := index $teamsData .Params.home_team }}
+{{ $away := index $teamsData .Params.away_team }}
+<div class="eyebrow">Latest Result</div>
+<a href="{{ .RelPermalink }}" style="text-decoration:none;display:block;">
+<section class="hero">
+  <span class="hero-tag">● Full Time</span>
+  <div class="hero-teams">
+    <div class="hero-team home">{{ .Params.home_team }}</div>
+    <div class="hero-score">{{ .Params.home_score }}<span class="dash">&ndash;</span>{{ .Params.away_score }}</div>
+    <div class="hero-team away">{{ .Params.away_team }}</div>
+  </div>
+  <h2 class="hero-headline">{{ .Title }}</h2>
+  <p class="hero-dek">{{ .Summary }}</p>
+  <div class="hero-meta">
+    <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+    {{ with .Params.venue }}<span>{{ . }}</span>{{ end }}
+  </div>
+  <span class="hero-watch">Read the recap</span>
+</section>
+</a>
+{{ end }}
+
+<div class="eyebrow">Recent Results</div>
 <ul class="recap-list">
-  {{ $recaps := where .Site.RegularPages "Section" "recaps" }}
-  {{ range ($recaps.ByDate.Reverse | first 10) }}
-  <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <span class="recap-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+  {{ range first 10 $rest }}
+  {{ $home := index $teamsData .Params.home_team }}
+  {{ $away := index $teamsData .Params.away_team }}
+  <li class="row">
+    <a href="{{ .RelPermalink }}">
+      <span class="chip" style="background:{{ $home.color }};color:{{ $home.text }}">{{ $home.abbr }}</span>
+      <span class="team-name">{{ .Params.home_team }}</span>
+      <span class="score">{{ .Params.home_score }}</span>
+      <span class="score">{{ .Params.away_score }}</span>
+      <span class="team-name away">{{ .Params.away_team }}</span>
+      <span class="chip" style="background:{{ $away.color }};color:{{ $away.text }}">{{ $away.abbr }}</span>
+      <span class="date">{{ .Date.Format "Jan 2" }}</span>
+      <span class="row-headline">{{ .Title }}</span>
+    </a>
   </li>
   {{ end }}
 </ul>

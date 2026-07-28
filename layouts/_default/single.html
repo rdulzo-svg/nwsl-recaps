@@ -1,9 +1,18 @@
 {{ define "main" }}
+{{ $teamsData := hugo.Data.teams }}
+{{ $home := index $teamsData .Params.home_team }}
+{{ $away := index $teamsData .Params.away_team }}
 <article class="recap">
+  {{ if and .Params.home_score .Params.away_score }}
+  <div class="article-score">{{ .Params.home_score }}<span class="dash">&ndash;</span>{{ .Params.away_score }}</div>
+  <div class="article-teams">{{ .Params.home_team }} vs. {{ .Params.away_team }}</div>
+  {{ end }}
+
   <h1>{{ .Title }}</h1>
   <p class="recap-meta">
     {{ .Date.Format "January 2, 2006" }}
-    {{ with .Params.venue }} · {{ . }}{{ end }}
+    {{ with .Params.venue }} &middot; {{ . }}{{ end }}
+    {{ with .Params.attendance }} &middot; {{ . }} fans{{ end }}
   </p>
 
   {{ with .Params.video_id }}

@@ -3,7 +3,10 @@ title: "Ullmark's Stoppage-Time Winner Lifts Houston Dash Past Bay FC"
 date: 2026-07-24
 venue: "Shell Energy Stadium"
 video_id: "YAsCpRocBEA"
-teams: ["Houston Dash", "Bay FC"]
+home_team: "Houston Dash"
+away_team: "Bay FC"
+home_score: 1
+away_score: 0
 draft: false
 ---
 

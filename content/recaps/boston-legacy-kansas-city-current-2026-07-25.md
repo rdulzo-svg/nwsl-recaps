@@ -3,7 +3,10 @@ title: "Traoré's Deflected Strike Sends Boston Legacy Past Kansas City Current"
 date: 2026-07-25
 venue: "Centreville Bank Stadium, Pawtucket, R.I."
 video_id: "Dgg6bLGAAnU"
-teams: ["Boston Legacy FC", "Kansas City Current"]
+home_team: "Boston Legacy FC"
+away_team: "Kansas City Current"
+home_score: 1
+away_score: 0
 draft: false
 ---
 

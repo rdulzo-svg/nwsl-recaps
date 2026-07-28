@@ -1,12 +1,23 @@
 {{ define "main" }}
+{{ $teamsData := hugo.Data.teams }}
 <h1>{{ .Title }}</h1>
 {{ with .Content }}<div class="section-intro">{{ . }}</div>{{ end }}
 
 <ul class="recap-list">
   {{ range .Pages.ByDate.Reverse }}
-  <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <span class="recap-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+  {{ $home := index $teamsData .Params.home_team }}
+  {{ $away := index $teamsData .Params.away_team }}
+  <li class="row">
+    <a href="{{ .RelPermalink }}">
+      <span class="chip" style="background:{{ $home.color }};color:{{ $home.text }}">{{ $home.abbr }}</span>
+      <span class="team-name">{{ .Params.home_team }}</span>
+      <span class="score">{{ .Params.home_score }}</span>
+      <span class="score">{{ .Params.away_score }}</span>
+      <span class="team-name away">{{ .Params.away_team }}</span>
+      <span class="chip" style="background:{{ $away.color }};color:{{ $away.text }}">{{ $away.abbr }}</span>
+      <span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
+      <span class="row-headline">{{ .Title }}</span>
+    </a>
   </li>
   {{ end }}
 </ul>

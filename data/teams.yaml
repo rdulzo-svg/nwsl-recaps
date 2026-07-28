@@ -1,0 +1,64 @@
+Portland Thorns FC:
+  abbr: POR
+  color: "#4C8BF5"
+  text: "#FFFFFF"
+Gotham FC:
+  abbr: GOT
+  color: "#7C5CFF"
+  text: "#FFFFFF"
+Houston Dash:
+  abbr: HOU
+  color: "#FF7A3D"
+  text: "#3D1400"
+Bay FC:
+  abbr: BAY
+  color: "#2EC4B6"
+  text: "#FFFFFF"
+Orlando Pride:
+  abbr: ORL
+  color: "#B04AFF"
+  text: "#FFFFFF"
+Chicago Stars FC:
+  abbr: CHI
+  color: "#E8B400"
+  text: "#4A3200"
+Boston Legacy FC:
+  abbr: BOS
+  color: "#2F8F5B"
+  text: "#FFFFFF"
+Kansas City Current:
+  abbr: KC
+  color: "#D1495B"
+  text: "#FFFFFF"
+North Carolina Courage:
+  abbr: NC
+  color: "#1E9E8C"
+  text: "#FFFFFF"
+Utah Royals FC:
+  abbr: UTA
+  color: "#6A4C93"
+  text: "#FFFFFF"
+Seattle Reign FC:
+  abbr: SEA
+  color: "#2F80ED"
+  text: "#FFFFFF"
+San Diego Wave FC:
+  abbr: SD
+  color: "#00A8C6"
+  text: "#FFFFFF"
+Washington Spirit:
+  abbr: WAS
+  color: "#C43B6B"
+  text: "#FFFFFF"
+Denver Summit FC:
+  abbr: DEN
+  color: "#B5651D"
+  text: "#FFFFFF"
+Racing Louisville FC:
+  abbr: LOU
+  color: "#E0483E"
+  text: "#FFFFFF"
+Angel City FC:
+  abbr: ANG
+  color: "#FF5CA8"
+  text: "#4A0030"

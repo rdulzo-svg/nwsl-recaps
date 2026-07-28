@@ -4,7 +4,10 @@ date: 2026-07-26
 venue: "Audi Field"
 attendance: "15,169"
 video_id: "mAc2ZXhqJkQ"
-teams: ["Washington Spirit", "Denver Summit FC"]
+home_team: "Washington Spirit"
+away_team: "Denver Summit FC"
+home_score: 1
+away_score: 0
 draft: false
 ---
 
