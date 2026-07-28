@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="recap">
+  <h1>{{ .Title }}</h1>
+  <p class="recap-meta">{{ .Date.Format "January 2, 2006" }}</p>
+
+  <div class="recap-body">
+    {{ .Content }}
+  </div>
+
+  {{ partial "preview-matches.html" . }}
+
+  <p class="methodology-note">
+    Percentages come from an analytical model built on match results and team performance,
+    checked against real outcomes before publishing. They describe likelihood, not certainty.
+  </p>
+</article>
+{{ end }}

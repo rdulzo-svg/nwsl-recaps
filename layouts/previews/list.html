@@ -1,0 +1,29 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Content }}<div class="section-intro">{{ . }}</div>{{ end }}
+
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ $latest := index $pages 0 }}
+{{ $rest := after 1 $pages }}
+
+{{ with $latest }}
+<div class="eyebrow">This Week&rsquo;s Matches</div>
+{{ partial "preview-matches.html" . }}
+<p class="methodology-note">
+  Percentages come from an analytical model built on match results and team performance,
+  checked against real outcomes before publishing. They describe likelihood, not certainty.
+</p>
+{{ end }}
+
+{{ if $rest }}
+<div class="eyebrow">Past Previews</div>
+<ul class="recap-list">
+  {{ range $rest }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="recap-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
+{{ end }}

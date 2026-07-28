@@ -1,0 +1,31 @@
+{{ $teamsData := hugo.Data.teams }}
+<div class="preview-list">
+  {{ range .Params.matches }}
+  {{ $home := index $teamsData .home_team }}
+  {{ $away := index $teamsData .away_team }}
+  <div class="preview-match">
+    <div class="preview-date">{{ .date }}</div>
+    <div class="preview-matchup">
+      <div class="preview-team home">
+        <span class="chip" style="background:{{ $home.color }};color:{{ $home.text }}">{{ $home.abbr }}</span>
+        {{ .home_team }}
+      </div>
+      <div class="preview-vs">vs</div>
+      <div class="preview-team away">
+        {{ .away_team }}
+        <span class="chip" style="background:{{ $away.color }};color:{{ $away.text }}">{{ $away.abbr }}</span>
+      </div>
+    </div>
+    <div class="preview-bar">
+      <div class="bar-seg bar-home" style="width:{{ .home_win_pct }}%;background:{{ $home.color }}"></div>
+      <div class="bar-seg bar-draw" style="width:{{ .draw_pct }}%"></div>
+      <div class="bar-seg bar-away" style="width:{{ .away_win_pct }}%;background:{{ $away.color }}"></div>
+    </div>
+    <div class="preview-pcts">
+      <span>{{ printf "%.0f" .home_win_pct }}%</span>
+      <span class="preview-pct-draw">{{ printf "%.0f" .draw_pct }}% draw</span>
+      <span>{{ printf "%.0f" .away_win_pct }}%</span>
+    </div>
+  </div>
+  {{ end }}
+</div>

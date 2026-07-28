@@ -22,6 +22,11 @@ disableKinds = ['taxonomy', 'term']
   url = "/power-rankings/"
   weight = 3
 
+[[menu.main]]
+  name = "Previews"
+  url = "/previews/"
+  weight = 4
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
