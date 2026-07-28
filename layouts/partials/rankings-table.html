@@ -1,0 +1,29 @@
+{{ $teamsData := hugo.Data.teams }}
+<table class="rankings-table">
+  <thead>
+    <tr>
+      <th class="rank-col">Rk</th>
+      <th>Team</th>
+      <th class="num-col">Rating</th>
+      <th class="num-col">Chg</th>
+      <th class="num-col">Record</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range .Params.rankings }}
+    {{ $team := index $teamsData .team }}
+    <tr>
+      <td class="rank-col">{{ .rank }}</td>
+      <td class="team-col">
+        <span class="chip" style="background:{{ $team.color }};color:{{ $team.text }}">{{ $team.abbr }}</span>
+        <span class="team-col-name">{{ .team }}</span>
+      </td>
+      <td class="num-col">{{ printf "%.1f" .rating }}</td>
+      <td class="num-col {{ if gt .change 0.0 }}chg-up{{ else if lt .change 0.0 }}chg-down{{ else }}chg-flat{{ end }}">
+        {{ if gt .change 0.0 }}+{{ end }}{{ printf "%.1f" .change }}
+      </td>
+      <td class="num-col record-col">{{ .record }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>

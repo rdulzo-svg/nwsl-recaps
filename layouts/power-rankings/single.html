@@ -1,5 +1,4 @@
 {{ define "main" }}
-{{ $teamsData := hugo.Data.teams }}
 <article class="recap">
   <h1>{{ .Title }}</h1>
   <p class="recap-meta">{{ .Date.Format "January 2, 2006" }}</p>
@@ -8,40 +7,11 @@
     {{ .Content }}
   </div>
 
-  <table class="rankings-table">
-    <thead>
-      <tr>
-        <th class="rank-col">#</th>
-        <th>Team</th>
-        <th class="num-col">Rating</th>
-        <th class="num-col">Chg</th>
-        <th class="num-col">Record</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{ range .Params.rankings }}
-      {{ $team := index $teamsData .team }}
-      <tr>
-        <td class="rank-col">{{ .rank }}</td>
-        <td>
-          <span class="chip" style="background:{{ $team.color }};color:{{ $team.text }}">{{ $team.abbr }}</span>
-          {{ .team }}
-        </td>
-        <td class="num-col">{{ .rating }}</td>
-        <td class="num-col {{ if gt .change 0.0 }}chg-up{{ else if lt .change 0.0 }}chg-down{{ end }}">
-          {{ if gt .change 0.0 }}+{{ end }}{{ .change }}
-        </td>
-        <td class="num-col">{{ .record }}</td>
-      </tr>
-      {{ end }}
-    </tbody>
-  </table>
+  {{ partial "rankings-table.html" . }}
 
   <p class="methodology-note">
-    Ratings are Elo-based, calculated from match results only (margin of victory, opponent strength, and home
-    advantage), with a portion of each team's rating regressed toward the league average between seasons.
-    Backtested against a held-out set of real results before publishing.
-    <a href="https://github.com/rdulzo-svg/nwsl-power-ratings" target="_blank" rel="noopener">Methodology and code</a>.
+    Rankings are generated from an analytical model built on match results and team performance,
+    checked against real outcomes before publishing.
   </p>
 </article>
 {{ end }}

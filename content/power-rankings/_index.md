@@ -2,4 +2,4 @@
 title: "Power Rankings"
 ---
 
-A weekly Elo-based power rating for every NWSL team, based on match results only (not narrative or reputation).
+A weekly analytical power ranking for every NWSL team, based on team performance rather than narrative or reputation.

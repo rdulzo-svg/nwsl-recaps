@@ -363,46 +363,80 @@ a:focus-visible, .hero-watch:focus-visible {
 .rankings-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
   font-family: var(--font-display);
   font-size: 0.92rem;
+  border-top: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
 }
 .rankings-table th {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-mute);
   text-align: left;
-  padding: 0.5rem 0.5rem;
-  border-bottom: 2px solid var(--text);
+  padding: 0.65rem 0.6rem;
+  border-bottom: 1px solid var(--text);
+  white-space: nowrap;
 }
 .rankings-table td {
-  padding: 0.55rem 0.5rem;
+  padding: 0.6rem 0.6rem;
   border-bottom: 1px solid var(--line);
   vertical-align: middle;
+  line-height: 1.2;
+}
+.rankings-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.rankings-table tbody tr:nth-child(even) {
+  background: var(--paper);
 }
 .rankings-table .rank-col {
   font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
   color: var(--text-mute);
-  width: 2rem;
+  font-size: 0.82rem;
+  width: 2.25rem;
+  text-align: center;
+}
+.rankings-table th.rank-col { text-align: center; }
+.rankings-table .team-col {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  white-space: nowrap;
+}
+.rankings-table .team-col-name {
+  font-weight: 600;
 }
 .rankings-table .num-col {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   text-align: right;
   white-space: nowrap;
+  min-width: 4.5rem;
+}
+.rankings-table .record-col {
+  color: var(--text-mute);
+  font-size: 0.85rem;
+  min-width: 3.5rem;
 }
 .rankings-table th.num-col { text-align: right; }
 .rankings-table .chip {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   font-weight: 700;
-  padding: 0.15rem 0.35rem;
-  margin-right: 0.5rem;
+  letter-spacing: 0.01em;
+  padding: 0.2rem 0.4rem;
+  min-width: 2.4rem;
+  text-align: center;
+  flex-shrink: 0;
 }
-.chg-up { color: #1e9e4a; }
+.chg-up { color: #1e8a4a; }
 .chg-down { color: var(--pink); }
+.chg-flat { color: var(--text-mute); }
 
 .methodology-note {
   font-family: var(--font-mono);
@@ -411,11 +445,12 @@ a:focus-visible, .hero-watch:focus-visible {
   color: var(--text-mute);
   border-top: 1px dashed var(--line);
   padding-top: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
 .methodology-note a { color: var(--text); }
 
 @media (max-width: 560px) {
   .rankings-table { font-size: 0.8rem; }
-  .rankings-table th, .rankings-table td { padding: 0.4rem 0.3rem; }
+  .rankings-table th, .rankings-table td { padding: 0.45rem 0.4rem; }
+  .rankings-table .record-col { min-width: 2.75rem; }
 }
