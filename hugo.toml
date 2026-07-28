@@ -3,7 +3,7 @@ locale = 'en-us'
 title = 'NWSL Recaps'
 
 [params]
-  description = "AI-assisted match recaps and highlights for the National Women's Soccer League."
+  description = "Match recaps and highlights for the National Women's Soccer League."
 
 [[menu.main]]
   name = "Home"
