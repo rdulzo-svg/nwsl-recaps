@@ -358,3 +358,64 @@ a:focus-visible, .hero-watch:focus-visible {
   outline: 2px solid var(--pink);
   outline-offset: 2px;
 }
+
+/* Power rankings table */
+.rankings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+}
+.rankings-table th {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 2px solid var(--text);
+}
+.rankings-table td {
+  padding: 0.55rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.rankings-table .rank-col {
+  font-family: var(--font-mono);
+  color: var(--text-mute);
+  width: 2rem;
+}
+.rankings-table .num-col {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+.rankings-table th.num-col { text-align: right; }
+.rankings-table .chip {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 0.15rem 0.35rem;
+  margin-right: 0.5rem;
+}
+.chg-up { color: #1e9e4a; }
+.chg-down { color: var(--pink); }
+
+.methodology-note {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--text-mute);
+  border-top: 1px dashed var(--line);
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+}
+.methodology-note a { color: var(--text); }
+
+@media (max-width: 560px) {
+  .rankings-table { font-size: 0.8rem; }
+  .rankings-table th, .rankings-table td { padding: 0.4rem 0.3rem; }
+}
