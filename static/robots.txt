@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rdulzo-svg.github.io/nwsl-recaps/sitemap.xml
