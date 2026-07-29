@@ -6,6 +6,8 @@
       <th>Team</th>
       <th class="num-col">Rating</th>
       <th class="num-col">Chg</th>
+      <th class="num-col">Atk</th>
+      <th class="num-col">Def</th>
       <th class="num-col">Record</th>
     </tr>
   </thead>
@@ -21,6 +23,12 @@
       <td class="num-col">{{ printf "%.1f" .rating }}</td>
       <td class="num-col {{ if gt .change 0.0 }}chg-up{{ else if lt .change 0.0 }}chg-down{{ else }}chg-flat{{ end }}">
         {{ if gt .change 0.0 }}+{{ end }}{{ printf "%.1f" .change }}
+      </td>
+      <td class="num-col {{ if gt .attack 0.0 }}chg-up{{ else if lt .attack 0.0 }}chg-down{{ else }}chg-flat{{ end }}">
+        {{ if gt .attack 0.0 }}+{{ end }}{{ printf "%.2f" .attack }}
+      </td>
+      <td class="num-col {{ if gt .defense 0.0 }}chg-up{{ else if lt .defense 0.0 }}chg-down{{ else }}chg-flat{{ end }}">
+        {{ if gt .defense 0.0 }}+{{ end }}{{ printf "%.2f" .defense }}
       </td>
       <td class="num-col record-col">{{ .record }}</td>
     </tr>
