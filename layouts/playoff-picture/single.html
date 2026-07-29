@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article class="recap">
+  <h1>{{ .Title }}</h1>
+  <p class="recap-meta">{{ .Date.Format "January 2, 2006" }}</p>
+
+  <div class="recap-body">
+    {{ .Content }}
+  </div>
+
+  {{ partial "playoff-table.html" . }}
+
+  <p class="methodology-note">
+    Odds come from simulating the rest of the season thousands of times using an analytical model of team
+    performance, starting from actual current standings. Simplification worth knowing: real NWSL tiebreakers
+    also use head-to-head results; this simulation uses points and goal difference only.
+  </p>
+</article>
+{{ end }}

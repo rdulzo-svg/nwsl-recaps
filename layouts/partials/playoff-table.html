@@ -1,0 +1,41 @@
+{{ $teamsData := hugo.Data.teams }}
+<div class="table-scroll">
+<table class="rankings-table playoff-table">
+  <thead>
+    <tr>
+      <th class="rank-col">Rk</th>
+      <th>Team</th>
+      <th class="num-col">Pts</th>
+      <th class="num-col">GD</th>
+      <th class="playoff-bar-col">Playoff Odds</th>
+      <th class="num-col">Proj. Pts</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $i, $t := .Params.teams }}
+    {{ $team := index $teamsData $t.team }}
+    <tr>
+      <td class="rank-col">{{ add $i 1 }}</td>
+      <td class="team-col">
+        <span class="chip" style="background:{{ $team.color }};color:{{ $team.text }}">{{ $team.abbr }}</span>
+        <span class="team-col-name">{{ $t.team }}</span>
+      </td>
+      <td class="num-col">{{ printf "%.0f" $t.current_points }}</td>
+      <td class="num-col {{ if gt $t.current_gd 0.0 }}chg-up{{ else if lt $t.current_gd 0.0 }}chg-down{{ else }}chg-flat{{ end }}">
+        {{ if gt $t.current_gd 0.0 }}+{{ end }}{{ printf "%.0f" $t.current_gd }}
+      </td>
+      <td class="playoff-bar-col">
+        <div class="playoff-bar-track">
+          <div class="playoff-bar-fill" style="width:{{ $t.playoff_pct }}%;background:{{ $team.color }}"></div>
+        </div>
+        <span class="playoff-bar-pct">{{ printf "%.0f" $t.playoff_pct }}%</span>
+      </td>
+      <td class="num-col">{{ printf "%.1f" $t.projected_final_points }}</td>
+    </tr>
+    {{ if eq (add $i 1) 8 }}
+    <tr class="playoff-line-row"><td colspan="6">PLAYOFF LINE — TOP 8 QUALIFY</td></tr>
+    {{ end }}
+    {{ end }}
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Content }}<div class="section-intro">{{ . }}</div>{{ end }}
+
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ $latest := index $pages 0 }}
+{{ $rest := after 1 $pages }}
+
+{{ with $latest }}
+<div class="eyebrow">Current Odds &mdash; {{ .Date.Format "January 2, 2006" }}</div>
+{{ partial "playoff-table.html" . }}
+<p class="methodology-note">
+  Odds come from simulating the rest of the season thousands of times using an analytical model of team
+  performance, starting from actual current standings. Simplification worth knowing: real NWSL tiebreakers
+  also use head-to-head results; this simulation uses points and goal difference only.
+</p>
+{{ end }}
+
+{{ if $rest }}
+<div class="eyebrow">Past Updates</div>
+<ul class="recap-list">
+  {{ range $rest }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="recap-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
+{{ end }}

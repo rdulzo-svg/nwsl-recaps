@@ -27,6 +27,11 @@ disableKinds = ['taxonomy', 'term']
   url = "/previews/"
   weight = 4
 
+[[menu.main]]
+  name = "Playoff Picture"
+  url = "/playoff-picture/"
+  weight = 5
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

@@ -527,3 +527,49 @@ a:focus-visible, .hero-watch:focus-visible {
 @media (max-width: 560px) {
   .preview-matchup { font-size: 0.85rem; }
 }
+
+/* Playoff picture */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+.playoff-table {
+  min-width: 640px;
+}
+.playoff-bar-col {
+  min-width: 7rem;
+}
+th.playoff-bar-col { text-align: left; }
+.playoff-bar-track {
+  display: inline-block;
+  width: 4rem;
+  height: 8px;
+  background: var(--line);
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  overflow: hidden;
+}
+.playoff-bar-fill {
+  height: 100%;
+}
+.playoff-bar-pct {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+  vertical-align: middle;
+}
+.playoff-line-row td {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  color: var(--text-mute);
+  background: var(--paper);
+  padding: 0.35rem !important;
+  border-bottom: 2px dashed var(--text-mute) !important;
+}
+
+@media (max-width: 560px) {
+  .playoff-bar-col { min-width: 7rem; }
+  .playoff-bar-track { width: 3.5rem; }
+}
